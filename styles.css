@@ -1,0 +1,707 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffe6e0;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem; /* Reduzi o padding para diminuir o header */
+    background: #ff5722;
+    color: #fff;
+}
+
+header .logo img {
+    height: 80px; /* Mantive o tamanho do logo */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background: #ffd8cc;
+}
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-image {
+    position: relative; /* Define um contexto de posicionamento */
+    display: flex;
+    justify-content: flex-end; /* Alinha as imagens à direita */
+    align-items: center;
+    height: 400px; /* Define uma altura para o container */
+    margin-top: 2rem; /* Adiciona espaço acima das imagens */
+}
+
+.hero-image img {
+    position: relative; /* Posicionamento relativo para alinhamento horizontal */
+    width: 200px; /* Define uma largura fixa para as imagens */
+    height: auto; /* Mantém a proporção */
+    margin-left: -50px; /* Sobrepõe as imagens horizontalmente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o efeito de destaque */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+    border-radius: 8px; /* Bordas arredondadas para as imagens */
+}
+
+.hero-image img:hover {
+    z-index: 4; /* Traz a imagem para frente ao passar o mouse */
+    transform: scale(1.1); /* Destaca a imagem com leve aumento */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero .cta-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+#hero .download-buttons {
+    margin-top: 1.5rem;
+}
+
+#hero .download-buttons a {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#hero .app-store {
+    background: #ff5722;
+}
+
+#hero .play-store {
+    background: #ff5722;
+}
+
+.novidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.novidade-item {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.novidade-item h4 {
+    margin-bottom: 0.5rem;
+    color: #ff5722;
+}
+
+#beneficios {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #fff; /* Fundo branco mantido */
+    color: #333;
+}
+
+#beneficios h2 {
+    font-size: 2.8rem; /* Aumentei o tamanho da fonte */
+    margin-bottom: 1rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif; /* Fonte mais jovem e moderna */
+    font-weight: 700; /* Negrito para destaque */
+}
+
+.beneficios-descricao {
+    font-size: 1.4rem; /* Aumentei o tamanho da fonte */
+    margin-bottom: 2rem;
+    color: #666;
+    font-family: 'Poppins', sans-serif; /* Fonte mais jovem e moderna */
+    font-weight: 400; /* Peso regular para contraste */
+    line-height: 1.8; /* Melhor espaçamento entre linhas */
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.beneficio-item {
+    background: #f9f9f9; /* Fundo levemente cinza para destacar os boxes */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.beneficio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.beneficio-item img {
+    height: 80px;
+    margin-bottom: 1rem;
+    background: #fff; /* Fundo branco para os ícones */
+    border-radius: 50%; /* Tornar os ícones circulares */
+    padding: 10px; /* Espaçamento interno para os ícones */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destacar os ícones */
+}
+
+.beneficio-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ff5722;
+}
+
+.beneficio-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+#marketing {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #ff5722;
+    color: #fff;
+}
+
+#marketing h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.marketing-descricao {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.marketing-download {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.marketing-download a {
+    display: inline-block;
+    width: 150px; /* Define a largura do botão */
+    height: 50px; /* Define a altura do botão */
+    background: #fff; /* Fundo branco */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marketing-download a img {
+    width: 100%; /* Faz a imagem preencher toda a largura */
+    height: 100%; /* Faz a imagem preencher toda a altura */
+    object-fit: cover; /* Garante que a imagem se ajuste sem distorção */
+}
+
+.marketing-download a:hover {
+    transform: translateY(-5px); /* Efeito de hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+}
+
+#cta {
+    text-align: center;
+    padding: 2rem;
+    background: #ff5722;
+    color: #fff;
+}
+
+#cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+#cta .download-buttons a {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#sobre {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #ffe6e0; /* Fundo levemente colorido */
+    color: #333;
+}
+
+#sobre h2 {
+    font-size: 2.8rem; /* Tamanho maior para o título */
+    margin-bottom: 1rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+    font-weight: 700;
+}
+
+.sobre-descricao {
+    font-size: 1.4rem; /* Tamanho maior para o texto */
+    margin-bottom: 2rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+    font-weight: 400;
+    line-height: 1.8; /* Melhor espaçamento entre linhas */
+    max-width: 800px; /* Limita a largura do texto */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section {
+    padding: 2rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #ff5722;
+    color: #fff;
+}
+
+#funcionalidades {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #fff;
+    color: #333;
+}
+
+#funcionalidades h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.funcionalidades-descricao {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.funcionalidades-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: left;
+}
+
+.funcionalidades-lista li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.funcionalidades-lista li::before {
+    content: "✔";
+    color: #ff5722;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.funcionalidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.funcionalidade-item {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.funcionalidade-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.funcionalidade-item img {
+    height: 80px; /* Ajustei o tamanho para 80px */
+    margin-bottom: 1rem;
+    background: #fff; /* Fundo branco para os ícones */
+    border-radius: 50%; /* Tornar os ícones circulares */
+    padding: 10px; /* Espaçamento interno para os ícones */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destacar os ícones */
+}
+
+.funcionalidade-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.funcionalidade-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+#novidades {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #ffe6e0;
+    color: #333;
+}
+
+#novidades h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.novidades-descricao {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.novidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.novidade-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.novidade-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.novidade-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.novidade-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Animações suaves */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botão de rolar para o topo */
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+#scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Melhor responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center; /* Centraliza os itens no header */
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center; /* Centraliza o conteúdo do herói */
+        text-align: center;
+    }
+
+    .hero-image {
+        justify-content: center; /* Centraliza as imagens no mobile */
+        height: auto; /* Ajusta a altura automaticamente */
+        margin-top: 1rem; /* Reduz o espaçamento superior */
+    }
+
+    .hero-image img {
+        position: relative; /* Remove sobreposição no mobile */
+        width: 100%; /* Faz as imagens ocuparem toda a largura disponível */
+        max-width: 150px; /* Define um tamanho máximo */
+        margin: 0 10px; /* Adiciona espaçamento horizontal */
+        transform: none; /* Remove transformações */
+        box-shadow: none; /* Remove sombras */
+    }
+
+    .beneficios-grid, .novidades-grid, .funcionalidades-grid {
+        grid-template-columns: 1fr; /* Um item por linha */
+    }
+
+    .beneficio-item, .novidade-item, .funcionalidade-item {
+        margin: 0 auto; /* Centraliza os itens */
+    }
+
+    .marketing-download {
+        flex-direction: column; /* Alinha os botões verticalmente */
+        gap: 1rem;
+    }
+
+    .marketing-download a {
+        width: 80%; /* Reduz a largura dos botões */
+        max-width: 300px; /* Define um limite máximo */
+        margin: 0 auto; /* Centraliza os botões */
+    }
+
+    .beneficios-grid, .novidades-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .funcionalidades-lista {
+        text-align: center;
+    }
+}
+
+/* Efeitos de hover */
+.cta-button:hover {
+    background: #e64a19;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.marketing-download a:hover {
+    background: #ffccbc;
+    transform: translateY(-5px);
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center; /* Centraliza os itens no header */
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column; /* Alinha o conteúdo verticalmente */
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%; /* Permite que o texto ocupe toda a largura */
+        margin-bottom: 1rem;
+    }
+
+    .hero-image {
+        flex-direction: row; /* Alinha as imagens horizontalmente */
+        justify-content: center; /* Centraliza as imagens */
+        gap: 10px; /* Espaçamento entre as imagens */
+        margin-top: 1rem; /* Reduz o espaçamento superior */
+    }
+
+    .hero-image img {
+        width: 100px; /* Reduz o tamanho das imagens */
+        height: auto; /* Mantém a proporção */
+        transform: none; /* Remove transformações */
+        box-shadow: none; /* Remove sombras */
+    }
+
+    .beneficios-grid, .novidades-grid, .funcionalidades-grid {
+        grid-template-columns: 1fr; /* Um item por linha */
+    }
+
+    .beneficio-item, .novidade-item, .funcionalidade-item {
+        margin: 0 auto; /* Centraliza os itens */
+    }
+
+    .marketing-download {
+        flex-direction: column; /* Alinha os botões verticalmente */
+        gap: 1rem;
+    }
+
+    .marketing-download a {
+        width: 80%; /* Reduz a largura dos botões */
+        max-width: 300px; /* Define um limite máximo */
+        margin: 0 auto; /* Centraliza os botões */
+    }
+
+    .cta-button {
+        width: 100%; /* Botão ocupa toda a largura */
+        max-width: 300px; /* Define um limite máximo */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte no rodapé */
+    }
+}
+
+#videos {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #ffe6e0; /* Fundo laranja claro, igual à seção "Sobre o App" */
+    color: #333;
+}
+
+#videos h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.videos-descricao {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Ajusta o layout para caber em telas menores */
+    gap: 0.05rem; /* Reduzi ainda mais o espaçamento entre as divs dos vídeos */
+}
+
+.video-item {
+    flex: 0 0 auto; /* Garante que os itens não encolham */
+    max-width: 180px; /* Reduzi o tamanho máximo da largura */
+    margin: 0 auto; /* Centraliza os itens */
+}
+
+.video-item video {
+    width: 100%; /* Faz o vídeo ocupar toda a largura disponível */
+    max-width: 180px; /* Define o mesmo tamanho das imagens */
+    height: auto; /* Mantém a proporção */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: 1fr; /* Um vídeo por linha no mobile */
+        gap: 0.02rem; /* Reduz ainda mais o espaçamento no mobile */
+    }
+
+    .video-item video {
+        max-width: 150px; /* Reduz o tamanho dos vídeos no mobile */
+    }
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
