@@ -52,22 +52,22 @@ header nav ul li a {
 }
 
 .hero-image {
-    position: relative; /* Define um contexto de posicionamento */
     display: flex;
-    justify-content: flex-end; /* Alinha as imagens à direita */
-    align-items: center;
-    height: 400px; /* Define uma altura para o container */
-    margin-top: 2rem; /* Adiciona espaço acima das imagens */
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    height: auto; /* Allow the container to adjust to the images' height */
+    max-width: 100%; /* Ensure the container does not exceed the section width */
+    overflow: visible; /* Prevent cropping of images */
 }
 
 .hero-image img {
-    position: relative; /* Posicionamento relativo para alinhamento horizontal */
-    width: 200px; /* Define uma largura fixa para as imagens */
-    height: auto; /* Mantém a proporção */
-    margin-left: -50px; /* Sobrepõe as imagens horizontalmente */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o efeito de destaque */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra padrão */
-    border-radius: 8px; /* Bordas arredondadas para as imagens */
+    width: auto; /* Maintain natural width */
+    max-width: 250px; /* Slightly increase the maximum width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px; /* Add spacing between images */
+    object-fit: scale-down; /* Ensure the entire image is visible without cropping */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Keep subtle shadow */
+    border-radius: 8px; /* Rounded corners for images */
 }
 
 .hero-image img:hover {
@@ -565,6 +565,98 @@ footer {
     .funcionalidades-lista {
         text-align: center;
     }
+
+    .carousel-container {
+        flex-wrap: wrap; /* Permite que os vídeos quebrem linha */
+        justify-content: center; /* Centraliza os vídeos */
+        gap: 1.5rem; /* Aumenta o espaçamento entre os vídeos */
+    }
+
+    .video-item {
+        flex: 1 1 100%; /* Faz os vídeos ocuparem 100% da largura */
+        max-width: 100%; /* Garante que os vídeos não ultrapassem a largura do container */
+    }
+
+    .video-item video {
+        width: 100%; /* Faz o vídeo ocupar toda a largura do container */
+        height: auto; /* Mantém a proporção do vídeo */
+    }
+
+    .video-description {
+        font-size: 1rem; /* Ajusta o tamanho da fonte para telas menores */
+        padding: 0.4rem 0.8rem; /* Reduz o padding */
+    }
+
+    #hero {
+        flex-direction: column; /* Alinha o conteúdo verticalmente */
+        text-align: center; /* Centraliza o texto */
+        padding: 1rem; /* Reduz o padding */
+    }
+
+    .hero-text {
+        max-width: 100%; /* Permite que o texto ocupe toda a largura */
+    }
+
+    .hero-image img {
+        max-width: 100%; /* Ajusta as imagens para ocupar toda a largura */
+        height: auto; /* Mantém a proporção */
+    }
+
+    .beneficios-grid, .novidades-grid, .funcionalidades-grid {
+        grid-template-columns: 1fr; /* Um item por linha */
+    }
+
+    .beneficio-item, .novidade-item, .funcionalidade-item {
+        margin: 0 auto; /* Centraliza os itens */
+    }
+
+    .marketing-download {
+        flex-direction: column; /* Alinha os botões verticalmente */
+        gap: 1rem;
+    }
+
+    .marketing-download a {
+        width: 80%; /* Reduz a largura dos botões */
+        max-width: 300px; /* Define um limite máximo */
+        margin: 0 auto; /* Centraliza os botões */
+    }
+
+    .cta-button {
+        width: 100%; /* Botão ocupa toda a largura */
+        max-width: 300px; /* Define um limite máximo */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte no rodapé */
+    }
+}
+
+/* Ajustes para telas pequenas como 430x932 */
+@media (max-width: 430px) {
+    body {
+        font-size: 14px; /* Reduz o tamanho da fonte base */
+    }
+
+    .video-item video {
+        max-height: 300px; /* Limita a altura máxima para telas muito pequenas */
+    }
+
+    .video-description {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem; /* Reduz o tamanho do título */
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Reduz o tamanho do texto */
+    }
+
+    .cta-button {
+        font-size: 0.9rem; /* Ajusta o tamanho do botão */
+        padding: 0.4rem 0.8rem; /* Reduz o padding do botão */
+    }
 }
 
 /* Efeitos de hover */
@@ -641,6 +733,306 @@ footer {
     }
 }
 
+
+/* Ajuste para o container de vídeos */
+.carousel-container {
+    display: flex;
+    flex-direction: column; /* No mobile, vídeos ficam empilhados */
+    align-items: center;
+    gap: 1.5rem; /* Espaçamento entre os vídeos */
+}
+
+.video-item {
+    flex: 1 1 30%; /* Define a largura dos vídeos como 30% */
+    max-width: 30%; /* Limita a largura máxima */
+    text-align: center; /* Centraliza o texto da descrição */
+}
+
+/* Ajuste para os itens de vídeo */
+.video-item {
+    width: 100%;
+    max-width: 600px; /* Controla o tamanho no desktop */
+}
+
+.video-item video {
+    width: 100%; /* Faz o vídeo ocupar toda a largura do container */
+    height: auto; /* Mantém a proporção do vídeo */
+}
+
+.video-description {
+    margin-top: 0.5rem;
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: #ff5722; /* Altera a cor para destacar */
+    font-family: 'Poppins', sans-serif;
+    text-align: center; /* Centraliza o texto */
+    text-transform: uppercase; /* Coloca o texto em letras maiúsculas */
+    background-color: #fff5f0; /* Adiciona um fundo suave */
+    padding: 0.5rem 1rem; /* Adiciona espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+    display: inline-block; /* Faz com que o fundo se ajuste ao texto */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+.carousel-title {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 320px; /* Simula um celular */
+    height: 600px;    /* Altura de celular */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 80%;
+    object-fit: contain; /* ou 'cover' */
+    flex-shrink: 0;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center; /* Centraliza o título */
+    width: 100%; /* Garante que o título ocupe toda a largura do container */
+}
+
+
+.carousel-container video {
+    border-radius: 10px; /* Bordas arredondadas para o vídeo */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra ao redor do vídeo */
+    max-width: 70%; /* Reduz a largura máxima do vídeo */
+    max-height: 600px; /* Define uma altura máxima para o vídeo */
+    height: auto; /* Mantém a proporção do vídeo */
+   
+}
+
+/* Removendo estilos de .video-responsive */
+.video-responsive {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Limite de tamanho no desktop */
+    margin: 0 auto; /* Centraliza */
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-responsive video,
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Estilo responsivo para vídeos */
+.video-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra ao redor do vídeo */
+}
+
+.video-responsive video,
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Ajuste para vídeos no desktop e mobile */
+.video-item {
+    width: 100%;
+    max-width: 500px; /* Limite no desktop */
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+.video-responsive {
+    width: 100%;
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+.video-responsive video,
+.video-responsive iframe {
+    width: 100%;
+    height: auto; /* Mantém a proporção do vídeo */
+    display: block; /* Remove espaços extras ao redor do vídeo */
+    border-radius: 12px; /* Bordas arredondadas */
+}
+
+/* Mobile — deixa o vídeo ocupar toda a largura */
+@media (max-width: 768px) {
+    .video-item {
+        max-width: 100%; /* Remove limite no mobile */
+        padding: 0; /* Remove espaçamento lateral */
+    }
+
+    .video-responsive video {
+        width: 100%; /* Faz o vídeo ocupar toda a largura da tela */
+        height: auto; /* Mantém a proporção */
+    }
+}
+
+/* Ajuste para vídeos no desktop e mobile */
+.video-item {
+    width: 100%;
+    max-width: auto; /* Limite no desktop */
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+.video-responsive {
+    width: 100%;
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+/* Mobile — deixa o vídeo maior */
+@media (max-width: 768px) {
+    .video-item {
+        max-width: 100%; /* Remove limite no mobile */
+    }
+}
+
+/* Ajuste para vídeos verticais */
+.video-responsive {
+    width: 100%;
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+/* Estilos para vídeos no formato vertical */
+.vertical-video {
+    position: relative;
+    width: 100%; /* O vídeo ocupará toda a largura disponível */
+    max-width: 360px; /* Largura máxima simulando um celular */
+    margin: 0 auto; /* Centraliza o vídeo */
+    padding-bottom: 177.78%; /* Proporção 9:16 (vertical) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* O vídeo ocupará toda a largura do container */
+    height: 100%; /* O vídeo ocupará toda a altura do container */
+    object-fit: cover; /* Garante que o vídeo preencha o container sem distorção */
+    border-radius: 12px;
+}
+
+/* Responsividade para vídeos verticais */
+@media (max-width: 768px) {
+    .vertical-video {
+        max-width: 100%; /* O vídeo ocupará toda a largura da tela no mobile */
+        padding-bottom: 200%; /* Ajusta a proporção para telas menores */
+    }
+}
+
+/* Estilos para vídeos no formato vertical */
+.vertical-video {
+    position: relative;
+    width: 100%; /* O vídeo ocupará toda a largura disponível */
+    padding-bottom: 177.78%; /* Proporção 9:16 (vertical) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto; /* Ajusta a largura automaticamente */
+    height: 100%; /* O vídeo ocupará toda a altura do container */
+    object-fit: contain; /* Garante que o vídeo seja exibido completamente */
+    border-radius: 12px;
+}
+
+/* Responsividade para vídeos verticais */
+@media (max-width: 768px) {
+    .vertical-video {
+        padding-bottom: 200%; /* Ajusta a proporção para telas menores */
+    }
+}
+
+/* Estilos para vídeos no formato vertical com controles ajustados */
+.vertical-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* O vídeo ocupará toda a largura disponível */
+    max-width: 360px; /* Largura máxima simulando um celular */
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+.vertical-video video {
+    width: 100%; /* O vídeo ocupará toda a largura do container */
+    aspect-ratio: 9 / 16; /* Define a proporção 9:16 */
+    object-fit: contain; /* Garante que o vídeo seja exibido completamente */
+    border-radius: 12px;
+    display: block;
+}
+
+/* Responsividade para vídeos verticais */
+@media (max-width: 768px) {
+    .vertical-video {
+        max-width: 100%; /* O vídeo ocupará toda a largura da tela no mobile */
+    }
+}
+
+/* Estilos para a seção "Veja algumas funcionalidades na prática" */
 #videos {
     text-align: center;
     padding: 3rem 2rem;
@@ -685,6 +1077,14 @@ footer {
     height: auto; /* Mantém a proporção */
     border-radius: 8px; /* Bordas arredondadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+}
+
+.video-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 /* Responsividade para dispositivos móveis */
