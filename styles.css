@@ -716,4 +716,448 @@ footer {
 }
 
 .video-item:hover {
-    transform: tran
+    transform: translateY(-8px); /* Eleva o item ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+}
+
+.video-description {
+    margin-top: 0.5rem;
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: #ff5722; /* Altera a cor para destacar */
+    font-family: 'Poppins', sans-serif;
+    text-align: center; /* Centraliza o texto */
+    text-transform: uppercase; /* Coloca o texto em letras maiúsculas */
+    background-color: #fff5f0; /* Adiciona um fundo suave */
+    padding: 0.5rem 1rem; /* Adiciona espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+    display: inline-block; /* Faz com que o fundo se ajuste ao texto */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+.carousel-title {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 320px; /* Simula um celular */
+    height: 600px;    /* Altura de celular */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 80%;
+    object-fit: contain; /* ou 'cover' */
+    flex-shrink: 0;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center; /* Centraliza o título */
+    width: 100%; /* Garante que o título ocupe toda a largura do container */
+}
+
+
+.carousel-container video {
+    border-radius: 10px; /* Bordas arredondadas para o vídeo */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra ao redor do vídeo */
+    max-width: 70%; /* Reduz a largura máxima do vídeo */
+    max-height: 600px; /* Define uma altura máxima para o vídeo */
+    height: auto; /* Mantém a proporção do vídeo */
+   
+}
+
+/* Removendo estilos de .video-responsive */
+.video-responsive {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Limite de tamanho no desktop */
+    margin: 0 auto; /* Centraliza */
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-responsive video,
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Estilo responsivo para vídeos */
+.video-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra ao redor do vídeo */
+}
+
+.video-responsive video,
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Ajuste para vídeos no desktop e mobile */
+.video-item {
+    width: 100%;
+    max-width: auto; /* Limite no desktop */
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+.video-responsive {
+    width: 100%;
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+.video-responsive video,
+.video-responsive iframe {
+    width: 100%;
+    height: auto; /* Mantém a proporção do vídeo */
+    display: block; /* Remove espaços extras ao redor do vídeo */
+    border-radius: 12px; /* Bordas arredondadas */
+}
+
+/* Mobile — deixa o vídeo ocupar toda a largura */
+@media (max-width: 768px) {
+    .video-item {
+        max-width: 100%; /* Remove limite no mobile */
+        padding: 0; /* Remove espaçamento lateral */
+    }
+
+    .video-responsive video {
+        width: 100%; /* Faz o vídeo ocupar toda a largura da tela */
+        height: auto; /* Mantém a proporção */
+    }
+}
+
+/* Ajuste para vídeos no desktop e mobile */
+.video-item {
+    width: 100%;
+    max-width: auto; /* Limite no desktop */
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+.video-responsive {
+    width: 100%;
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+/* Mobile — deixa o vídeo maior */
+@media (max-width: 768px) {
+    .video-item {
+        max-width: 100%; /* Remove limite no mobile */
+    }
+}
+
+/* Ajuste para vídeos verticais */
+.video-responsive {
+    width: 100%;
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+/* Estilos para vídeos no formato vertical */
+.vertical-video {
+    position: relative;
+    width: 100%; /* O vídeo ocupará toda a largura disponível */
+    max-width: 360px; /* Largura máxima simulando um celular */
+    margin: 0 auto; /* Centraliza o vídeo */
+    padding-bottom: 177.78%; /* Proporção 9:16 (vertical) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* O vídeo ocupará toda a largura do container */
+    height: 100%; /* O vídeo ocupará toda a altura do container */
+    object-fit: cover; /* Garante que o vídeo preencha o container sem distorção */
+    border-radius: 12px;
+}
+
+/* Responsividade para vídeos verticais */
+@media (max-width: 768px) {
+    .vertical-video {
+        max-width: 100%; /* O vídeo ocupará toda a largura da tela no mobile */
+        padding-bottom: 200%; /* Ajusta a proporção para telas menores */
+    }
+}
+
+/* Estilos para vídeos no formato vertical */
+.vertical-video {
+    position: relative;
+    width: 100%; /* O vídeo ocupará toda a largura disponível */
+    padding-bottom: 177.78%; /* Proporção 9:16 (vertical) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto; /* Ajusta a largura automaticamente */
+    height: 100%; /* O vídeo ocupará toda a altura do container */
+    object-fit: contain; /* Garante que o vídeo seja exibido completamente */
+    border-radius: 12px;
+}
+
+/* Responsividade para vídeos verticais */
+@media (max-width: 768px) {
+    .vertical-video {
+        padding-bottom: 200%; /* Ajusta a proporção para telas menores */
+    }
+}
+
+/* Estilos para vídeos no formato vertical com controles ajustados */
+.vertical-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* O vídeo ocupará toda a largura disponível */
+    max-width: 360px; /* Largura máxima simulando um celular */
+    margin: 0 auto; /* Centraliza o vídeo */
+}
+
+.vertical-video video {
+    width: 100%; /* O vídeo ocupará toda a largura do container */
+    aspect-ratio: 9 / 16; /* Define a proporção 9:16 */
+    object-fit: contain; /* Garante que o vídeo seja exibido completamente */
+    border-radius: 12px;
+    display: block;
+}
+
+/* Responsividade para vídeos verticais */
+@media (max-width: 768px) {
+    .vertical-video {
+        max-width: 100%; /* O vídeo ocupará toda a largura da tela no mobile */
+    }
+}
+
+/* Estilos para a seção "Veja algumas funcionalidades na prática" */
+#videos {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #ffe6e0; /* Fundo laranja claro, igual à seção "Sobre o App" */
+    color: #333;
+}
+
+#videos h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.videos-descricao {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta para caber mais vídeos por linha */
+    gap: 1rem; /* Reduz o espaçamento entre os vídeos */
+    justify-items: center; /* Centraliza os itens */
+}
+
+.video-item {
+    width: 80%; /* Reduz a largura para 80% */
+    max-width: 240px; /* Define um tamanho máximo menor */
+    background: #f9f9f9; /* Fundo levemente cinza */
+    padding: 1rem; /* Reduz o padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto; /* Centraliza os itens */
+}
+
+.video-item:hover {
+    transform: translateY(-8px); /* Eleva o item ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+}
+
+.video-item h3 {
+    font-size: 1.3rem; /* Reduz o tamanho do título */
+    margin-bottom: 0.8rem;
+    color: #ff5722;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.video-item video {
+    width: 100%; /* Faz o vídeo ocupar toda a largura disponível */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: 1fr; /* Um vídeo por linha no mobile */
+    }
+
+    .video-item {
+        padding: 0.8rem; /* Reduz o padding no mobile */
+    }
+
+    .video-item h3 {
+        font-size: 1.1rem; /* Reduz o tamanho do título no mobile */
+    }
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.marketing-download a img {
+    width: 100%; /* Faz a imagem preencher toda a largura */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* Garante que a imagem não seja cortada */
+    background-color: transparent; /* Remove qualquer fundo branco */
+    border: none; /* Remove bordas */
+    display: block; /* Remove espaços extras ao redor da imagem */
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .marketing-download a {
+        width: 120px; /* Reduz a largura no mobile */
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+
+    .marketing-download a img {
+        width: 100%; /* Garante que a imagem ocupe toda a largura no mobile */
+        height: auto; /* Mantém a proporção no mobile */
+    }
+}
+
+/* Estilos para a nova seção de download */
+#download {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #ff5722; /* Fundo laranja */
+    color: #fff;
+}
+
+#download h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+#download p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.download-buttons a {
+    display: inline-block;
+    width: 150px; /* Define a largura padrão */
+    height: auto; /* Ajusta a altura automaticamente */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-buttons a img {
+    width: 150px; /* Define uma largura fixa */
+    height: 50px; /* Define uma altura fixa */
+    object-fit: contain; /* Garante que a imagem não seja cortada */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+}
+
+.download-buttons a:hover {
+    transform: none; /* Remove o efeito de destaque */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.0); /* Mantém a sombra padrão */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .hero-image img {
+        width: 150px; /* Largura reduzida */
+        height: 300px; /* Altura reduzida */
+    }
+}
