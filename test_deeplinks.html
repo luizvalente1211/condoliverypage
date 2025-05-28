@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Deeplinks - Condolivery</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-link {
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .test-link:hover {
+            background: #0056b3;
+        }
+        .description {
+            color: #666;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teste de Deeplinks - Condolivery</h1>
+        <p class="description">
+            Clique nos links abaixo para testar o redirecionamento para o app Condolivery:
+        </p>
+        
+        <a href="?product=123" class="test-link">
+            Testar Produto (ID: 123)
+        </a>
+        
+        <a href="?seller=456" class="test-link">
+            Testar Vendedor (ID: 456)
+        </a>
+        
+        <a href="?product=789" class="test-link">
+            Testar Produto (ID: 789)
+        </a>
+        
+        <a href="?seller=999" class="test-link">
+            Testar Vendedor (ID: 999)
+        </a>
+        
+        <div style="margin-top: 30px; padding: 15px; background: #e9ecef; border-radius: 5px;">
+            <h3>Como funciona:</h3>
+            <ul>
+                <li>Os links acima simulam URLs compartilhadas pelo app Flutter</li>
+                <li>Quando clicados, devem redirecionar para o app via deeplink</li>
+                <li>Se o app não estiver instalado, será mostrado um modal para download</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 
