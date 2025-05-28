@@ -2,9 +2,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Função para detectar e processar deeplinks
     function handleDeeplinks() {
+        // Verifica parâmetros de query (?product=ID ou ?seller=ID)
         const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('product');
-        const sellerId = urlParams.get('seller');
+        let productId = urlParams.get('product');
+        let sellerId = urlParams.get('seller');
+        
+        // Verifica hash routing (#/product/ID ou #/seller/ID)
+        const hash = window.location.hash;
+        if (hash) {
+            const hashMatch = hash.match(/#\/(product|seller)\/(.+)/);
+            if (hashMatch) {
+                const type = hashMatch[1];
+                const id = hashMatch[2];
+                
+                if (type === 'product') {
+                    productId = id;
+                } else if (type === 'seller') {
+                    sellerId = id;
+                }
+            }
+        }
         
         if (productId) {
             // Redireciona para o app com deeplink de produto
@@ -88,6 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Executa a verificação de deeplinks
     handleDeeplinks();
+    
+    // Também executa quando o hash muda (para SPAs)
+    window.addEventListener('hashchange', handleDeeplinks);
 
     // Botão de rolar para o topo
     const scrollToTopButton = document.getElementById('scroll-to-top');
