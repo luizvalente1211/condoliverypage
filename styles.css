@@ -32,6 +32,14 @@ header nav ul li a {
     text-decoration: none;
 }
 
+.header-tagline {
+    font-size: 1.2rem; /* Tamanho da fonte */
+    color: #fff; /* Cor branca */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 0.5rem; /* Espaçamento superior */
+}
+
 #hero {
     display: flex;
     align-items: center;
@@ -53,17 +61,20 @@ header nav ul li a {
 
 .hero-image {
     display: flex;
-    justify-content: center; /* Center images horizontally */
-    align-items: center; /* Center images vertically */
+    justify-content: space-around; /* Garante que as imagens fiquem bem distribuídas */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que as imagens quebrem linha em telas menores */
+    gap: 1rem; /* Espaçamento entre as imagens */
     height: auto; /* Allow the container to adjust to the images' height */
     max-width: 100%; /* Ensure the container does not exceed the section width */
     overflow: visible; /* Prevent cropping of images */
 }
 
 .hero-image img {
-    width: 200px; /* Largura fixa */
-    height: 400px; /* Altura fixa */
-    object-fit: cover; /* Preenche o espaço, cortando as bordas se necessário */
+    width: 100%; /* Faz as imagens ocuparem toda a largura disponível */
+    max-width: 250px; /* Define um tamanho máximo maior para web */
+    height: auto; /* Mantém a proporção das imagens */
+    object-fit: contain; /* Garante que as imagens não sejam cortadas */
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
     border-radius: 8px; /* Bordas arredondadas */
@@ -253,6 +264,16 @@ header nav ul li a {
     color: #ff5722;
     font-family: 'Poppins', sans-serif; /* Fonte moderna */
     font-weight: 700;
+}
+
+#sobre h3 {
+    font-size: 2rem; /* Tamanho menor que o título principal */
+    margin-top: 1rem; /* Espaçamento superior */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+    color: #ff5722; /* Cor destacada */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+    font-weight: 600; /* Peso intermediário */
+    text-align: center; /* Centraliza o subtítulo */
 }
 
 .sobre-descricao {
@@ -622,6 +643,18 @@ footer {
     .cta-button {
         font-size: 0.9rem; /* Ajusta o tamanho do botão */
         padding: 0.4rem 0.8rem; /* Reduz o padding do botão */
+    }
+
+    .hero-image img {
+        max-width: 120px; /* Reduz o tamanho máximo das imagens */
+        margin: 0 auto; /* Centraliza as imagens */
+    }
+
+    #scroll-to-top {
+        bottom: 10px; /* Ajusta a posição do botão para evitar corte */
+        right: 10px; /* Ajusta a posição do botão para evitar corte */
+        width: 45px; /* Reduz o tamanho do botão */
+        height: 45px; /* Reduz o tamanho do botão */
     }
 }
 
@@ -1160,4 +1193,16 @@ footer {
         width: 150px; /* Largura reduzida */
         height: 300px; /* Altura reduzida */
     }
+}
+
+.logo {
+    display: flex; /* Exibe o logotipo e a frase na mesma linha */
+    align-items: center; /* Alinha verticalmente */
+    gap: 1rem; /* Espaçamento entre o logotipo e a frase */
+}
+
+.header-tagline {
+    font-size: 1.2rem; /* Tamanho da fonte */
+    color: #fff; /* Cor branca */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
 }
