@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Hash Routing - Condolivery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .result {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste de Hash Routing</h1>
+    <div id="result" class="result">
+        Carregando...
+    </div>
+    
+    <script>
+        // Função para detectar e processar deeplinks
+        function handleDeeplinks() {
+            // Verifica parâmetros de query (?product=ID ou ?seller=ID)
+            const urlParams = new URLSearchParams(window.location.search);
+            let productId = urlParams.get('product');
+            let sellerId = urlParams.get('seller');
+            
+            // Verifica hash routing (#/product/ID ou #/seller/ID)
+            const hash = window.location.hash;
+            if (hash) {
+                const hashMatch = hash.match(/#\/(product|seller)\/(.+)/);
+                if (hashMatch) {
+                    const type = hashMatch[1];
+                    const id = hashMatch[2];
+                    
+                    if (type === 'product') {
+                        productId = id;
+                    } else if (type === 'seller') {
+                        sellerId = id;
+                    }
+                }
+            }
+            
+            const resultDiv = document.getElementById('result');
+            
+            if (productId) {
+                const deeplink = `condolivery://product=${productId}`;
+                resultDiv.innerHTML = `
+                    <h3>✅ Produto detectado!</h3>
+                    <p><strong>ID:</strong> ${productId}</p>
+                    <p><strong>Deeplink:</strong> ${deeplink}</p>
+                    <p><strong>URL atual:</strong> ${window.location.href}</p>
+                `;
+                console.log('Redirecionando para produto:', deeplink);
+                
+            } else if (sellerId) {
+                const deeplink = `condolivery://seller=${sellerId}`;
+                resultDiv.innerHTML = `
+                    <h3>✅ Vendedor detectado!</h3>
+                    <p><strong>ID:</strong> ${sellerId}</p>
+                    <p><strong>Deeplink:</strong> ${deeplink}</p>
+                    <p><strong>URL atual:</strong> ${window.location.href}</p>
+                `;
+                console.log('Redirecionando para vendedor:', deeplink);
+                
+            } else {
+                resultDiv.innerHTML = `
+                    <h3>❌ Nenhum produto ou vendedor detectado</h3>
+                    <p><strong>URL atual:</strong> ${window.location.href}</p>
+                    <p><strong>Hash:</strong> ${hash || 'Nenhum'}</p>
+                    <p><strong>Query params:</strong> ${window.location.search || 'Nenhum'}</p>
+                `;
+            }
+        }
+        
+        // Executa quando a página carrega
+        document.addEventListener('DOMContentLoaded', handleDeeplinks);
+        
+        // Executa quando o hash muda
+        window.addEventListener('hashchange', handleDeeplinks);
+    </script>
+</body>
+</html> 
