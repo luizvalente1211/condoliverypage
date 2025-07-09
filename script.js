@@ -157,4 +157,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Corrige o tamanho do container para evitar problemas de largura
     carousel.style.width = '100%'; // Mantém o tamanho do container fixo
+
+    // Adiciona lógica para transformar as imagens em um carrossel funcional em dispositivos móveis
+    const heroImageContainer = document.querySelector('.hero-image');
+    const heroImages = document.querySelectorAll('.hero-image img');
+
+    if (window.innerWidth <= 768) {
+        // Configura o carrossel para dispositivos móveis
+        let startX = 0;
+        let scrollLeft = 0;
+
+        heroImageContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].pageX;
+            scrollLeft = heroImageContainer.scrollLeft;
+        });
+
+        heroImageContainer.addEventListener('touchmove', (e) => {
+            const x = e.touches[0].pageX;
+            const walk = startX - x; // Distância percorrida
+            heroImageContainer.scrollLeft = scrollLeft + walk;
+        });
+    }
 });

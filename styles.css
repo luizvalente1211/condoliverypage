@@ -64,11 +64,11 @@ header nav ul li a {
     justify-content: center; /* Centraliza horizontalmente */
     gap: 1rem; /* Espaçamento entre as imagens */
     align-items: center; /* Centraliza verticalmente */
-    height: auto; /* Ajusta a altura automaticamente */
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
 }
 
 .hero-image img {
-    width: 180px; /* Define o tamanho das imagens */
+    width: 180px; /* Define o tamanho padrão das imagens */
     height: auto; /* Mantém a proporção */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de destaque */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
@@ -92,12 +92,17 @@ header nav ul li a {
     }
 
     .hero-image {
-        flex-wrap: wrap; /* Permite que as imagens quebrem linha no mobile */
-        gap: 0.5rem; /* Reduz o espaçamento entre as imagens */
+        display: flex;
+        flex-direction: column; /* Exibe as imagens uma abaixo da outra */
+        align-items: center; /* Centraliza as imagens horizontalmente */
+        gap: 1rem; /* Espaçamento entre as imagens */
     }
 
     .hero-image img {
-        width: 150px; /* Reduz o tamanho das imagens no mobile */
+        width: 90%; /* Ajusta a largura das imagens para caber na tela */
+        height: auto; /* Mantém a proporção */
+        border-radius: 8px; /* Bordas arredondadas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
     }
 
     body {
@@ -162,6 +167,33 @@ header nav ul li a {
         font-size: 0.9rem; /* Reduz o tamanho da fonte no rodapé */
         padding: 1rem; /* Ajusta o padding */
     }
+
+    .hero-image {
+        display: flex;
+        flex-direction: column; /* Exibe as imagens uma embaixo da outra */
+        align-items: center; /* Centraliza as imagens */
+        gap: 1rem; /* Espaçamento entre as imagens */
+    }
+
+    .hero-image img {
+        width: 90%; /* Ajusta a largura das imagens para caber na tela */
+        height: auto; /* Mantém a proporção */
+    }
+
+    .hero-image {
+        display: flex;
+        overflow-x: scroll; /* Permite rolagem horizontal */
+        scroll-snap-type: x mandatory; /* Ativa o snap para o carrossel */
+        gap: 1rem; /* Espaçamento entre as imagens */
+    }
+
+    .hero-image img {
+        scroll-snap-align: center; /* Centraliza cada imagem no carrossel */
+        width: 90%; /* Ajusta a largura das imagens */
+        height: auto; /* Mantém a proporção */
+        border-radius: 8px; /* Bordas arredondadas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+    }
 }
 
 /* Ajustes para telas muito pequenas */
@@ -192,7 +224,13 @@ header nav ul li a {
     }
 
     .hero-image img {
-        width: 120px; /* Reduz o tamanho máximo das imagens */
+        flex: 0 0 90%; /* Cada imagem ocupa 90% da largura da tela */
+        max-width: 250px; /* Define um tamanho máximo menor */
+        height: auto; /* Mantém a proporção */
+    }
+
+    .hero-image img {
+        width: 100%; /* Ajusta a largura para telas muito pequenas */
     }
 
     #scroll-to-top {
