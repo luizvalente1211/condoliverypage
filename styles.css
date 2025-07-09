@@ -41,101 +41,160 @@ header nav ul li a {
 }
 
 #hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    background: #ffd8cc;
-}
-
-.hero-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    display: flex; /* Exibe o conteúdo em linha */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Espaça os elementos */
+    padding: 2rem; /* Espaçamento interno */
+    background: #ffe6e0; /* Fundo da seção */
 }
 
 .hero-text {
-    flex: 1;
-    max-width: 500px;
+    flex: 1; /* Ocupa metade do espaço */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding-right: 2rem; /* Espaçamento entre texto e imagens */
 }
 
 .hero-image {
-    display: flex;
-    justify-content: space-around; /* Garante que as imagens fiquem bem distribuídas */
-    align-items: center;
-    flex-wrap: wrap; /* Permite que as imagens quebrem linha em telas menores */
+    display: flex; /* Exibe as imagens em linha */
+    justify-content: center; /* Centraliza horizontalmente */
     gap: 1rem; /* Espaçamento entre as imagens */
-    height: auto; /* Allow the container to adjust to the images' height */
-    max-width: 100%; /* Ensure the container does not exceed the section width */
-    overflow: visible; /* Prevent cropping of images */
+    align-items: center; /* Centraliza verticalmente */
+    height: auto; /* Ajusta a altura automaticamente */
 }
 
 .hero-image img {
-    width: 100%; /* Faz as imagens ocuparem toda a largura disponível */
-    max-width: 250px; /* Define um tamanho máximo maior para web */
-    height: auto; /* Mantém a proporção das imagens */
-    object-fit: contain; /* Garante que as imagens não sejam cortadas */
-    margin: 10px;
+    width: 180px; /* Define o tamanho das imagens */
+    height: auto; /* Mantém a proporção */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de destaque */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    border-radius: 8px; /* Bordas arredondadas */
-    background-color: white; /* Fundo branco para preencher */
 }
 
 .hero-image img:hover {
-    z-index: 4; /* Traz a imagem para frente ao passar o mouse */
-    transform: scale(1.1); /* Destaca a imagem com leve aumento */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+    transform: scale(1.1); /* Destaca a imagem ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
 }
 
-#hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-#hero .cta-button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: #ff5722;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-}
-
-#hero .download-buttons {
-    margin-top: 1.5rem;
-}
-
-#hero .download-buttons a {
-    display: inline-block;
-    margin: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-#hero .app-store {
-    background: #ff5722;
-}
-
-#hero .play-store {
-    background: #ff5722;
-}
-
-.app-store {
-    background: transparent; /* Remove qualquer fundo */
-    border: none; /* Remove bordas */
-    box-shadow: none; /* Remove sombras */
-    padding: 0; /* Remove espaçamento interno */
-    transition: none; /* Remove transições */
-}
-
-/* Ajustes para dispositivos móveis */
+/* Ajustes para telas menores */
 @media (max-width: 768px) {
-    .app-store {
-        background: transparent; /* Garante que o fundo permaneça transparente no mobile */
+    #hero {
+        flex-direction: column; /* Alinha o conteúdo verticalmente no mobile */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .hero-text {
+        padding-right: 0; /* Remove o espaçamento no mobile */
+        margin-bottom: 1rem; /* Espaçamento inferior */
+    }
+
+    .hero-image {
+        flex-wrap: wrap; /* Permite que as imagens quebrem linha no mobile */
+        gap: 0.5rem; /* Reduz o espaçamento entre as imagens */
+    }
+
+    .hero-image img {
+        width: 150px; /* Reduz o tamanho das imagens no mobile */
+    }
+
+    body {
+        font-size: 16px; /* Ajusta o tamanho da fonte para melhor leitura */
+    }
+
+    header {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        text-align: center; /* Centraliza o texto */
+        padding: 1rem; /* Ajusta o padding */
+    }
+
+    .logo {
+        flex-direction: column; /* Alinha o logotipo e tagline verticalmente */
+        gap: 0.5rem; /* Reduz o espaçamento */
+    }
+
+    .hero-text {
+        text-align: center; /* Centraliza o texto */
+        padding: 0; /* Remove espaçamento lateral */
+        margin-bottom: 1rem; /* Espaçamento inferior */
+    }
+
+    .hero-image {
+        flex-wrap: wrap; /* Permite que as imagens quebrem linha */
+        justify-content: center; /* Centraliza as imagens */
+        gap: 0.5rem; /* Reduz o espaçamento entre as imagens */
+    }
+
+    .hero-image img {
+        width: 140px; /* Reduz o tamanho das imagens */
+        height: auto; /* Mantém a proporção */
+    }
+
+    .beneficios-grid, .funcionalidades-grid, .novidades-grid, .videos-grid {
+        grid-template-columns: 1fr; /* Exibe os itens em uma única coluna */
+        gap: 1rem; /* Ajusta o espaçamento entre os itens */
+    }
+
+    .beneficio-item, .funcionalidade-item, .novidade-item, .video-item {
+        margin: 0 auto; /* Centraliza os itens */
+        padding: 1rem; /* Ajusta o padding */
+    }
+
+    .video-item video {
+        width: 100%; /* Faz o vídeo ocupar toda a largura disponível */
+        height: auto; /* Mantém a proporção */
+    }
+
+    .download-buttons {
+        flex-direction: column; /* Alinha os botões verticalmente */
+        gap: 1rem; /* Ajusta o espaçamento entre os botões */
+    }
+
+    .download-buttons a {
+        width: 80%; /* Reduz a largura dos botões */
+        max-width: 300px; /* Define um limite máximo */
+        margin: 0 auto; /* Centraliza os botões */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte no rodapé */
+        padding: 1rem; /* Ajusta o padding */
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 430px) {
+    body {
+        font-size: 14px; /* Reduz o tamanho da fonte base */
+    }
+
+    .video-item video {
+        max-height: 300px; /* Limita a altura máxima para telas muito pequenas */
+    }
+
+    .video-description {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem; /* Reduz o tamanho do título */
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Reduz o tamanho do texto */
+    }
+
+    .cta-button {
+        font-size: 0.9rem; /* Ajusta o tamanho do botão */
+        padding: 0.4rem 0.8rem; /* Reduz o padding do botão */
+    }
+
+    .hero-image img {
+        width: 120px; /* Reduz o tamanho máximo das imagens */
+    }
+
+    #scroll-to-top {
+        bottom: 10px; /* Ajusta a posição do botão para evitar corte */
+        right: 10px; /* Ajusta a posição do botão para evitar corte */
+        width: 45px; /* Reduz o tamanho do botão */
+        height: 45px; /* Reduz o tamanho do botão */
     }
 }
 
@@ -251,6 +310,30 @@ header nav ul li a {
     font-weight: bold;
 }
 
+.cta-container {
+    display: flex; /* Centraliza o botão */
+    justify-content: center; /* Alinha horizontalmente */
+    margin-top: 1.5rem; /* Espaçamento entre o texto e o botão */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem; /* Tamanho do botão */
+    background: #ff5722; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de hover */
+}
+
+.cta-button:hover {
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
 #sobre {
     text-align: center;
     padding: 3rem 2rem;
@@ -307,59 +390,16 @@ footer {
     color: #333;
 }
 
-#funcionalidades h2 {
-    font-size: 2.8rem;
-    margin-bottom: 2rem;
-    color: #ff5722;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-}
-
-.funcionalidades-descricao {
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
-    color: #555;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.funcionalidades-lista {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 800px;
-    text-align: left;
-}
-
-.funcionalidades-lista li {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #555;
-    line-height: 1.6;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.funcionalidades-lista li::before {
-    content: "✔";
-    color: #ff5722;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
-
 .funcionalidades-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: grid; /* Exibe os itens em formato de grade */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta o número de colunas dinamicamente */
+    gap: 2rem; /* Espaçamento entre os itens */
+    justify-items: center; /* Centraliza os itens na grade */
 }
 
 .funcionalidade-item {
     background: #f9f9f9;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -372,26 +412,25 @@ footer {
 }
 
 .funcionalidade-item img {
-    height: 80px; /* Ajustei o tamanho para 80px */
+    height: 80px;
     margin-bottom: 1rem;
-    background: #fff; /* Fundo branco para os ícones */
-    border-radius: 50%; /* Tornar os ícones circulares */
-    padding: 10px; /* Espaçamento interno para os ícones */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destacar os ícones */
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .funcionalidade-item h4 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: #ff5722;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
 }
 
 .funcionalidade-item p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
+    text-align: center; /* Centraliza o texto */
+    margin: 0 auto; /* Centraliza o texto dentro do container */
+    max-width: 90%; /* Limita a largura do texto */
+    line-height: 1.8; /* Melhora o espaçamento entre linhas */
 }
 
 #novidades {
@@ -823,15 +862,13 @@ footer {
 }
 
 .section-title {
-    font-size: 2.8rem;
-    color: #ff5722;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center; /* Centraliza o título */
-    width: 100%; /* Garante que o título ocupe toda a largura do container */
+    font-size: 2.8rem; /* Tamanho do título */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+    color: #ff5722; /* Cor do texto */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+    font-weight: 700; /* Negrito */
+    text-align: center; /* Centraliza o texto */
 }
-
 
 .carousel-container video {
     border-radius: 10px; /* Bordas arredondadas para o vídeo */
@@ -1205,4 +1242,18 @@ footer {
     font-size: 1.2rem; /* Tamanho da fonte */
     color: #fff; /* Cor branca */
     font-family: 'Poppins', sans-serif; /* Fonte moderna */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .hero-image img {
+        max-width: 150px; /* Reduz o tamanho máximo das imagens no mobile */
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 430px) {
+    .hero-image img {
+        max-width: 120px; /* Reduz ainda mais o tamanho máximo das imagens */
+    }
 }
