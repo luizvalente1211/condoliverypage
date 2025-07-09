@@ -8,6 +8,11 @@ body {
     overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
+html, body {
+    width: 100%; /* Garante que o layout ocupe toda a largura da tela */
+    overflow-x: hidden; /* Remove qualquer rolagem horizontal */
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -193,8 +198,55 @@ header nav ul li a {
     #scroll-to-top {
         bottom: 10px; /* Ajusta a posição do botão para evitar corte */
         right: 10px; /* Ajusta a posição do botão para evitar corte */
+        width: 40px; /* Reduz o tamanho do botão */
+        height: 40px; /* Reduz o tamanho do botão */
+        font-size: 1rem; /* Ajusta o tamanho do ícone */
+    }
+}
+
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+#scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    #scroll-to-top {
+        bottom: 15px; /* Ajusta a posição inferior */
+        right: 15px; /* Ajusta a posição lateral */
         width: 45px; /* Reduz o tamanho do botão */
         height: 45px; /* Reduz o tamanho do botão */
+        font-size: 1.2rem; /* Ajusta o tamanho do ícone */
+    }
+}
+
+@media (max-width: 430px) {
+    #scroll-to-top {
+        bottom: 10px; /* Ajusta ainda mais a posição inferior */
+        right: 10px; /* Ajusta ainda mais a posição lateral */
+        width: 40px; /* Reduz ainda mais o tamanho do botão */
+        height: 40px; /* Reduz ainda mais o tamanho do botão */
+        font-size: 1rem; /* Ajusta o tamanho do ícone */
     }
 }
 
@@ -531,6 +583,27 @@ footer {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    #scroll-to-top {
+        bottom: 15px; /* Ajusta a posição inferior */
+        right: 15px; /* Ajusta a posição lateral */
+        width: 45px; /* Reduz o tamanho do botão */
+        height: 45px; /* Reduz o tamanho do botão */
+        font-size: 1.2rem; /* Ajusta o tamanho do ícone */
+    }
+}
+
+@media (max-width: 430px) {
+    #scroll-to-top {
+        bottom: 10px; /* Ajusta ainda mais a posição inferior */
+        right: 10px; /* Ajusta ainda mais a posição lateral */
+        width: 40px; /* Reduz ainda mais o tamanho do botão */
+        height: 40px; /* Reduz ainda mais o tamanho do botão */
+        font-size: 1rem; /* Ajusta o tamanho do ícone */
+    }
+}
+
 /* Melhor responsividade */
 @media (max-width: 768px) {
     header {
@@ -692,8 +765,9 @@ footer {
     #scroll-to-top {
         bottom: 10px; /* Ajusta a posição do botão para evitar corte */
         right: 10px; /* Ajusta a posição do botão para evitar corte */
-        width: 45px; /* Reduz o tamanho do botão */
-        height: 45px; /* Reduz o tamanho do botão */
+        width: 40px; /* Reduz o tamanho do botão */
+        height: 40px; /* Reduz o tamanho do botão */
+        font-size: 1rem; /* Ajusta o tamanho do ícone */
     }
 }
 
